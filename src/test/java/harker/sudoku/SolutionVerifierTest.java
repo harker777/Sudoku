@@ -46,6 +46,19 @@ public class SolutionVerifierTest {
 			{0, 0, 0, 0, 0, 0, 0, 0, 9},
 	};
 
+	// Box 2-1 (4th) has duplicating 1
+	private int[][] solutionWithInvalidBox = {
+			{1, 0, 0, 0, 0, 0, 0, 0, 0},
+			{5, 2, 0, 0, 8, 0, 9, 7, 0},
+			{0, 4, 3, 7, 0, 0, 0, 0, 0},
+			{0, 0, 0, 4, 0, 0, 0, 0, 0},
+			{0, 1, 0, 0, 5, 0, 0, 0, 0},
+			{0, 0, 1, 0, 0, 6, 0, 0, 0},
+			{0, 0, 2, 0, 0, 0, 7, 0, 0},
+			{0, 6, 7, 0, 0, 0, 0, 8, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0, 9},
+	};
+
 	@Test
 	public void shouldSolutionVerifierReturnTrueOnValidSolutionPassed() {
 		assertTrue(testInstance.verifySolution(validSolution));
@@ -59,5 +72,10 @@ public class SolutionVerifierTest {
 	@Test
 	public void shouldSolutionVerifierReturnFalseOnSolutionWithInvalidColumnPassed() {
 		assertFalse(testInstance.verifySolution(solutionWithInvalidColumn));
+	}
+
+	@Test
+	public void shouldSolutionVerifierReturnFalseOnSolutionWithInvalidBoxPassed() {
+		assertFalse(testInstance.verifySolution(solutionWithInvalidBox));
 	}
 }
