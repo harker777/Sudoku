@@ -8,6 +8,8 @@ public class SolutionVerifier {
 	public static final int GRID_SIZE = 9;
 	public static final int BOX_GRID_SIZE = 3;
 
+	private SolutionPartsExtractor extractor = new SolutionPartsExtractor();
+
 	public boolean verifySolution(int[][] solution) {
 		for (int[] line : solution) {
 			if (hasRepeats(line)) {
@@ -16,7 +18,7 @@ public class SolutionVerifier {
 		}
 
 		for (int columnNumber = 0; columnNumber < GRID_SIZE; columnNumber++) {
-			int[] column = formColumn(solution, columnNumber);
+			int[] column = extractor.getColumn(solution, columnNumber);
 			if (hasRepeats(column)) {
 				return false;
 			}
@@ -32,16 +34,6 @@ public class SolutionVerifier {
 		}
 
 		return true;
-	}
-
-	private int[] formColumn(int[][] solution, int columnNumber) {
-		int[] column = new int[GRID_SIZE];
-
-		for (int lineNumber = 0; lineNumber < GRID_SIZE; lineNumber++) {
-			column[lineNumber] = solution[lineNumber][columnNumber];
-		}
-
-		return column;
 	}
 
 	private int[] formBox(int[][] solution, int lineNumber, int columnNumber) {
