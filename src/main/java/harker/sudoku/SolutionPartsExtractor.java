@@ -13,4 +13,8 @@ public class SolutionPartsExtractor {
 
 		return column;
 	}
+
+	public int[] getBox(int[][] someSolution, int boxLineNumber, int boxColumnNumber) {
+		return new int[0];
+	}
 }

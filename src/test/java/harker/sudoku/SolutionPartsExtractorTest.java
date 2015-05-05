@@ -27,4 +27,12 @@ public class SolutionPartsExtractorTest {
 
 		assertArrayEquals(expectedResult, actualResult);
 	}
+
+	@Test
+	public void testGetBox() {
+		int[] expectedResult = {0, 4, 0, 0, 0, 6, 0, 2, 0};
+		int[] actualResult = testInstance.getBox(someSolution, 1, 0);
+
+		assertArrayEquals(expectedResult, actualResult);
+	}
 }
