@@ -21,7 +21,7 @@ public class SolutionPartsExtractorTest {
 	};
 
 	@Test
-	public void testGetColumn() {
+	public void shouldGetColumnReturnCorrectColumn() {
 		int[] expectedResult = {0, 4, 5, 0, 6, 0, 0, 0, 0};
 		int[] actualResult = testInstance.getColumn(someSolution, 2);
 
@@ -29,7 +29,7 @@ public class SolutionPartsExtractorTest {
 	}
 
 	@Test
-	public void testGetBox() {
+	public void shouldGetBoxReturnCorrectBox() {
 		int[] expectedResult = {0, 4, 0, 0, 0, 6, 0, 2, 0};
 		int[] actualResult = testInstance.getBox(someSolution, 1, 0);
 
