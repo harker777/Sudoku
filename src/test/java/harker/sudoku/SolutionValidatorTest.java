@@ -3,6 +3,7 @@ package harker.sudoku;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class SolutionValidatorTest {
 
@@ -21,7 +22,12 @@ public class SolutionValidatorTest {
 	};
 
 	@Test
-	public void shouldValidateSolutionReturnTrueIfSolutionIsValid() {
+	public void shouldValidateSolutionReturnTrueOnValidSolutionPassed() {
 		assertTrue(testInstance.validateSolutionFormat(someSolution));
+	}
+
+	@Test
+	public void shouldValidateSolutionReturnFalseOnNullPassed() {
+		assertFalse(testInstance.validateSolutionFormat(null));
 	}
 }
