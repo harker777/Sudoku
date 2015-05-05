@@ -5,8 +5,8 @@ import java.util.Set;
 
 public class SolutionVerifier {
 
-	public static final int GRID_SIZE = 9;
-	public static final int BOX_GRID_SIZE = 3;
+	private static final int GRID_SIZE = 9;
+	private static final int BOX_GRID_SIZE = 3;
 
 	private SolutionPartsExtractor extractor = new SolutionPartsExtractor();
 
@@ -38,6 +38,7 @@ public class SolutionVerifier {
 
 	private boolean hasRepeats(int[] line) {
 		Set<Integer> encounteredInts = new HashSet<>();
+
 		for (int cell : line) {
 			if (cell != 0) {
 				if (encounteredInts.contains(cell)) {
@@ -47,6 +48,7 @@ public class SolutionVerifier {
 				}
 			}
 		}
+
 		return false;
 	}
 }
