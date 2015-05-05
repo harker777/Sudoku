@@ -21,6 +21,10 @@ public class SolutionValidatorTest {
 			{0, 0, 0, 0, 0, 0, 0, 0, 0},
 	};
 
+	private int[][] solutionWithNotEnoughLines = {
+			{3, 0, 0, 0, 0, 0, 0, 0, 0}
+	};
+
 	@Test
 	public void shouldValidateSolutionReturnTrueOnValidSolutionPassed() {
 		assertTrue(testInstance.validateSolutionFormat(someSolution));
@@ -29,5 +33,10 @@ public class SolutionValidatorTest {
 	@Test
 	public void shouldValidateSolutionReturnFalseOnNullPassed() {
 		assertFalse(testInstance.validateSolutionFormat(null));
+	}
+
+	@Test
+	public void shouldValidateSolutionReturnFalseOnSolutionWithNotEnoughLinesPassed() {
+		assertFalse(testInstance.validateSolutionFormat(solutionWithNotEnoughLines));
 	}
 }
