@@ -38,6 +38,18 @@ public class SolutionValidatorTest {
 			{0, 2, 0, 0, 0, 0, 0, 0, 0},
 	};
 
+	private int[][] solutionWithNotEnoughColumns = {
+			{3, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+			{0, 4, 0, 0, 0, 0, 0, 0, 0, 2},
+			{0, 2, 0, 0, 0, 0, 0, 0, 0, 6},
+			{0, 0, 6, 0, 0, 0, 0, 0, 0, 0},
+			{2, 0, 5, 0, 0, 1, 0, 0, 0},
+			{0, 1, 4, 5, 2, 0, 0, 0, 0, 3},
+			{0, 0, 0, 0, 0, 0, 0, 0, 0, 9},
+			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0, 0, 8},
+	};
+
 	@Test
 	public void shouldValidateSolutionReturnTrueOnValidSolutionPassed() {
 		assertTrue(testInstance.validateSolutionFormat(someSolution));
@@ -56,5 +68,10 @@ public class SolutionValidatorTest {
 	@Test
 	public void shouldValidateSolutionReturnFalseOnSolutionWithTooManyLinesPassed() {
 		assertFalse(testInstance.validateSolutionFormat(solutionWithTooManyLines));
+	}
+
+	@Test
+	public void shouldValidateSolutionReturnFalseOnSolutionWithNotEnoughColumnsPassed() {
+		assertFalse(testInstance.validateSolutionFormat(solutionWithNotEnoughColumns));
 	}
 }
