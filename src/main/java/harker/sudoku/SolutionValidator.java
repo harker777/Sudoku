@@ -13,6 +13,12 @@ public class SolutionValidator {
 			return false;
 		}
 
+		for (int[] line : solution) {
+			if (line.length < GRID_SIZE) {
+				return false;
+			}
+		}
+
 		return true;
 	}
 }
