@@ -9,7 +9,7 @@ public class SolutionValidator {
 			return false;
 		}
 
-		if (solution.length < GRID_SIZE) {
+		if (solution.length != GRID_SIZE) {
 			return false;
 		}
 
